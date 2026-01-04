@@ -1,0 +1,10 @@
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+=== ESP32 Board Info ===
+Likely model: ESP32-WROOM (likely)
+Flash size: 4 MB
+PSRAM size: 0 MB
+CPU frequency: 160 MHz
+Unique ID: B4:8A:0A:B2:E5:84
+>>> 

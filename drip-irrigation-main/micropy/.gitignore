@@ -1,0 +1,33 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+ENV/
+env/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDEs
+# .vscode/
+# .idea/
+
+# MicroPython firmware binaries
+firmware/*.bin
+firmware/*.uf2
+firmware/downloads/
+
+# Lock files
+uv.lock
+
+!micropy/.vscode/

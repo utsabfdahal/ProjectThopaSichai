@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Device</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#81dfaa",
+              "background-light": "#f6f8f7",
+              "background-dark": "#1A1C1E",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display">
+<div class="relative mx-auto flex h-screen w-full max-w-md flex-col overflow-hidden">
+<header class="flex h-14 shrink-0 items-center justify-between px-4">
+<button class="flex h-10 w-10 items-center justify-center text-[#E0E3E7]">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="flex-1 text-center text-xl font-medium text-[#E0E3E7]">Add Device</h1>
+<div class="h-10 w-10"></div>
+</header>
+<main class="flex flex-1 flex-col px-6 pb-20 pt-8">
+<div class="flex flex-1 flex-col items-center justify-between">
+<div>
+<p class="mb-8 text-center text-base text-[#E0E3E7]">Enter the 6-digit Device ID found on your controller.</p>
+</div>
+<div class="w-full max-w-xs">
+<label class="flex w-full flex-col">
+<span class="mb-2 text-sm font-medium text-[#E0E3E7]">Device ID</span>
+<input class="form-input h-14 w-full rounded-lg border-none bg-[#212529] p-4 text-center text-2xl tracking-[0.5em] text-[#E0E3E7] placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50" maxlength="6" placeholder="______" type="text" value=""/>
+</label>
+</div>
+</div>
+</main>
+<footer class="absolute bottom-0 left-0 w-full p-6">
+<button class="flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary text-base font-bold text-background-dark shadow-lg transition-colors hover:bg-primary/90">
+<span class="truncate">Connect Device</span>
+</button>
+</footer>
+</div>
+</body></html>

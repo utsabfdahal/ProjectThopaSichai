@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartDrip Device Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "m3-background": "#1A1C1E",
+            "m3-surface-container-low": "#212529",
+            "m3-primary": "#A8C7FA",
+            "m3-on-primary": "#0E3059",
+            "m3-on-surface": "#E2E2E6",
+            "m3-on-surface-variant": "#C2C7CE",
+            "m3-outline": "#8D9199",
+            "m3-error": "#FFB4AB",
+            "m3-on-error": "#690005",
+          },
+          fontFamily: {
+            "sans": ["Roboto", "sans-serif"]
+          },
+          borderRadius: {
+            "xl": "1rem",
+            "2xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .ripple {
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.2s ease-out, transform 0.1s ease-out;
+    }
+    .ripple:active {
+      transform: scale(0.98);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+    }
+    .snackbar-enter {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    .snackbar-enter-active {
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform 300ms cubic-bezier(0, 0, 0.2, 1), opacity 150ms ease-out;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-m3-background font-sans text-m3-on-surface">
+<div class="relative flex h-auto min-h-screen w-full flex-col antialiased">
+<header class="flex items-center bg-m3-background p-4 pb-3">
+<button class="flex size-12 shrink-0 items-center justify-center text-m3-on-surface">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-xl font-normal text-m3-on-surface flex-1 ml-4">Front Lawn Sprinkler</h1>
+</header>
+<main class="flex-grow p-4 pt-2">
+<div class="mb-6">
+<div class="relative rounded-t-lg bg-m3-surface-container-low focus-within:bg-[#34383D]">
+<label class="absolute left-4 top-2 text-xs text-m3-primary" for="device-name">Device Name</label>
+<input class="form-input w-full border-0 border-b-2 border-m3-on-surface-variant bg-transparent px-4 pb-3 pt-7 text-base text-m3-on-surface placeholder-m3-on-surface-variant focus:border-m3-primary focus:ring-0" id="device-name" type="text" value="Front Lawn Sprinkler"/>
+</div>
+</div>
+<div class="rounded-2xl bg-m3-surface-container-low p-4 mb-6">
+<div class="mb-4 flex items-baseline justify-between">
+<p class="text-sm font-medium text-m3-on-surface-variant">Device ID</p>
+<p class="text-sm text-m3-on-surface">SDRP-X-1A2B3C4D</p>
+</div>
+<div class="mb-4 flex items-baseline justify-between">
+<p class="text-sm font-medium text-m3-on-surface-variant">Firmware</p>
+<p class="text-sm text-m3-on-surface">v2.1.4</p>
+</div>
+<div class="flex items-baseline justify-between">
+<p class="text-sm font-medium text-m3-on-surface-variant">Status</p>
+<div class="flex items-center gap-2">
+<div class="size-2.5 rounded-full bg-green-500"></div>
+<p class="text-sm text-m3-on-surface">Online</p>
+</div>
+</div>
+</div>
+<div class="rounded-2xl bg-m3-surface-container-low overflow-hidden">
+<a class="ripple flex items-center justify-between p-4 transition-colors hover:bg-white/5" href="#">
+<div class="flex items-center gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-m3-primary/20 text-m3-primary">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<p class="text-base font-medium text-m3-on-surface">Configure Zones</p>
+</div>
+<span class="material-symbols-outlined text-m3-on-surface-variant">chevron_right</span>
+</a>
+</div>
+</main>
+<div class="p-4 pt-0 mt-auto">
+<button class="ripple flex w-full h-14 items-center justify-center gap-2 rounded-full bg-m3-error text-base font-medium text-m3-on-error shadow-sm">
+        Unregister Device
+      </button>
+</div>
+</div>
+<div class="fixed bottom-4 left-4 right-4 z-50 snackbar-enter snackbar-enter-active">
+<div class="flex min-h-[48px] items-center justify-between rounded-md bg-[#313033] px-4 py-2 shadow-lg">
+<p class="text-sm text-m3-on-surface">Device unregistered successfully.</p>
+</div>
+</div>
+
+</body></html>

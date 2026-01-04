@@ -1,0 +1,39 @@
+# Python Dependencies for Smart Drip Irrigation Server
+# Install with: pip3 install -r requirements.txt
+
+# MQTT Client
+paho-mqtt>=1.6.1
+
+# HTTP Server & REST API (future use)
+flask>=2.3.0
+flask-cors>=4.0.0
+
+# Database (future use)
+pymongo>=4.3.0  # For MongoDB
+# OR
+# sqlite3 is built-in to Python
+
+# Serial Communication (for direct ESP32 connection)
+pyserial>=3.5
+
+# Environment Variables
+python-dotenv>=1.0.0
+
+# Scheduling
+APScheduler>=3.10.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Time Series Database (optional, for long-term data)
+influxdb-client>=1.36.0
+
+# Logging
+colorlog>=6.7.0
+
+# Configuration
+pyyaml>=6.0
+
+# Testing
+pytest>=7.3.0

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartDrip - Create Account</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+      @layer base {
+        :root {--md-sys-color-primary: #82E0AA;
+          --md-sys-color-on-primary: #003823;
+          --md-sys-color-accent: #7DC2FF;
+          --md-sys-color-background: #1A1C1E;
+          --md-sys-color-surface: #212529;
+          --md-sys-color-on-surface: #E0E3E7;
+          --md-sys-color-on-surface-variant: #8A939E;
+          --md-sys-color-outline: #41484D;
+          --md-sys-color-inverse-surface: #E3E3E3;
+          --md-sys-color-inverse-on-surface: #303030;
+        }
+      }
+      @layer components {
+        .material-input {
+          @apply w-full rounded-t-lg border-b border-[var(--md-sys-color-outline)] bg-[var(--md-sys-color-surface)] p-4 text-sm placeholder:text-[var(--md-sys-color-on-surface-variant)] focus:border-b-2 focus:border-[var(--md-sys-color-primary)] focus:outline-none focus:ring-0;
+        }
+        .material-label {
+          @apply absolute left-4 top-1/2 -translate-y-1/2 text-sm text-[var(--md-sys-color-on-surface-variant)] transition-all duration-200 ease-in-out pointer-events-none;
+        }
+        .material-input:focus ~ .material-label,
+        .material-input:not(:placeholder-shown) ~ .material-label {
+          @apply -translate-y-[150%] scale-75 text-[var(--md-sys-color-primary)] origin-left;
+        }
+        .btn-ripple {
+          @apply relative overflow-hidden transition-all duration-200 ease-in-out;
+        }
+        .btn-ripple:active {
+          @apply shadow-lg shadow-black/40 translate-y-px;
+        }
+        .btn-ripple::after {
+          content: '';
+          @apply absolute block bg-white opacity-0 rounded-full;
+          pointer-events: none;
+          transform: scale(10, 10);
+        }
+        .btn-ripple:active::after {
+          @apply opacity-20;
+          transform: scale(0, 0);
+          transition: transform 0.3s, opacity 1s;
+        }
+      }
+    </style>
+<style>
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .snackbar {
+      animation: slide-in 0.5s forwards;
+    }
+    @keyframes slide-in {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[var(--md-sys-color-background)] text-[var(--md-sys-color-on-surface)]">
+<div class="flex min-h-screen flex-col justify-center p-4">
+<div class="w-full max-w-md mx-auto space-y-8">
+<div class="text-center">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[var(--md-sys-color-primary)]/10 mb-4">
+<span class="material-symbols-outlined text-[var(--md-sys-color-primary)] text-4xl">water_drop</span>
+</div>
+<h1 class="text-2xl font-medium tracking-tight">Create an Account</h1>
+</div>
+<form action="#" class="space-y-6" method="POST">
+<div class="relative">
+<input autocomplete="name" class="material-input peer" id="full-name" name="full-name" placeholder=" " required="" type="text"/>
+<label class="material-label" for="full-name">Name</label>
+</div>
+<div class="relative">
+<input autocomplete="email" class="material-input peer" id="email-address" name="email" placeholder=" " required="" type="email"/>
+<label class="material-label" for="email-address">Email</label>
+</div>
+<div class="relative">
+<input autocomplete="new-password" class="material-input peer" id="password" name="password" placeholder=" " required="" type="password"/>
+<label class="material-label" for="password">Password</label>
+</div>
+<div class="relative">
+<input autocomplete="new-password" class="material-input peer" id="confirm-password" name="confirm-password" placeholder=" " required="" type="password"/>
+<label class="material-label" for="confirm-password">Confirm Password</label>
+</div>
+<div class="pt-4">
+<button class="btn-ripple flex w-full justify-center rounded-full bg-[var(--md-sys-color-primary)] px-3 py-4 text-sm font-medium uppercase tracking-wider text-[var(--md-sys-color-on-primary)] shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--md-sys-color-primary)]" type="submit">Sign Up</button>
+</div>
+</form>
+<div class="text-center">
+<p class="mt-4 text-sm text-[var(--md-sys-color-on-surface)]">
+                    Already have an account?
+                    <a class="font-medium text-[var(--md-sys-color-accent)] hover:underline" href="#">Log In</a>
+</p>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 p-4 z-50">
+<div class="snackbar mx-auto flex max-w-md items-center justify-between gap-4 rounded-md bg-[var(--md-sys-color-inverse-surface)] px-4 py-3 text-[var(--md-sys-color-inverse-on-surface)] shadow-lg">
+<p class="text-sm">Registration successful!</p>
+<button class="font-medium uppercase tracking-wider text-[var(--md-sys-color-primary)] text-sm">Dismiss</button>
+</div>
+</div>
+
+</body></html>

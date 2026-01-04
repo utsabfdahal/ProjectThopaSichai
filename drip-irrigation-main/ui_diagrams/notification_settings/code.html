@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartDrip - Notification Preferences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "m3-primary": "#81D398", // Primary color (for toggles)
+            "m3-surface": "#1A1C1E", // Main background
+            "m3-surface-container-low": "#212529", // List item background
+            "m3-on-surface": "#E2E2E6", // Body font
+            "m3-on-surface-variant": "#C2C7CE", // Subtitles, icon background
+            "m3-outline-variant": "#42474E", // Border color
+            "m3-secondary-container": "#384A3E",
+            "m3-primary-container": "#005321",
+            "primary": "#13ec5b",
+          },
+          fontFamily: {
+            "display": ["Roboto", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-m3-surface text-m3-on-surface">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="sticky top-0 z-10 flex items-center justify-between p-4 bg-m3-surface/80 backdrop-blur-sm">
+<div class="flex items-center justify-center size-10 shrink-0">
+<span class="text-2xl material-symbols-outlined">arrow_back</span>
+</div>
+<h1 class="flex-1 text-xl font-medium tracking-wide">Notification Settings</h1>
+<div class="size-10 shrink-0"></div> 
+</div>
+<main class="flex-1 px-4 py-2 pb-24">
+<h2 class="px-4 pt-6 pb-2 text-sm font-medium text-m3-primary">System Alerts</h2>
+<div class="flex flex-col overflow-hidden rounded-xl bg-m3-surface-container-low">
+<div class="flex items-center justify-between min-h-[56px] gap-4 px-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-m3-on-surface-variant">water_drop</span>
+<p class="flex-1 text-base leading-normal truncate">Tank Low</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-[52px] cursor-pointer items-center rounded-full p-1 transition-colors duration-300 ease-in-out has-[:checked]:bg-m3-primary bg-m3-outline-variant">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="flex items-center justify-center text-transparent transition-colors duration-300 ease-in-out size-4 peer-checked:text-m3-primary-container">
+<span class="text-base leading-none material-symbols-outlined">done</span>
+</span>
+<span class="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-m3-on-surface-variant shadow-md transition-transform duration-300 ease-in-out peer-checked:translate-x-[-16px] peer-checked:bg-white">
+</span>
+</label>
+</div>
+</div>
+<div class="mx-4 border-b border-m3-outline-variant"></div>
+<div class="flex items-center justify-between min-h-[56px] gap-4 px-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-m3-on-surface-variant">wifi_off</span>
+<p class="flex-1 text-base leading-normal truncate">Device Offline</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-[52px] cursor-pointer items-center rounded-full p-1 transition-colors duration-300 ease-in-out has-[:checked]:bg-m3-primary bg-m3-outline-variant">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="flex items-center justify-center text-transparent transition-colors duration-300 ease-in-out size-4 peer-checked:text-m3-primary-container">
+<span class="text-base leading-none material-symbols-outlined">done</span>
+</span>
+<span class="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-m3-on-surface-variant shadow-md transition-transform duration-300 ease-in-out peer-checked:translate-x-[-16px] peer-checked:bg-white">
+</span>
+</label>
+</div>
+</div>
+<div class="mx-4 border-b border-m3-outline-variant"></div>
+<div class="flex items-center justify-between min-h-[56px] gap-4 px-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-m3-on-surface-variant">task_alt</span>
+<p class="flex-1 text-base leading-normal truncate">Watering Complete</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-[52px] cursor-pointer items-center rounded-full p-1 transition-colors duration-300 ease-in-out has-[:checked]:bg-m3-primary bg-m3-outline-variant">
+<input class="peer sr-only" type="checkbox"/>
+<span class="flex items-center justify-center text-transparent transition-colors duration-300 ease-in-out size-4 peer-checked:text-m3-primary-container">
+<span class="text-base leading-none material-symbols-outlined">done</span>
+</span>
+<span class="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-m3-on-surface-variant shadow-md transition-transform duration-300 ease-in-out peer-checked:translate-x-[-16px] peer-checked:bg-white">
+</span>
+</label>
+</div>
+</div>
+<div class="mx-4 border-b border-m3-outline-variant"></div>
+<div class="flex items-center justify-between min-h-[56px] gap-4 px-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-m3-on-surface-variant">system_update</span>
+<p class="flex-1 text-base leading-normal truncate">New Software Update</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-[52px] cursor-pointer items-center rounded-full p-1 transition-colors duration-300 ease-in-out has-[:checked]:bg-m3-primary bg-m3-outline-variant">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="flex items-center justify-center text-transparent transition-colors duration-300 ease-in-out size-4 peer-checked:text-m3-primary-container">
+<span class="text-base leading-none material-symbols-outlined">done</span>
+</span>
+<span class="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-m3-on-surface-variant shadow-md transition-transform duration-300 ease-in-out peer-checked:translate-x-[-16px] peer-checked:bg-white">
+</span>
+</label>
+</div>
+</div>
+</div>
+<h2 class="px-4 pt-8 pb-2 text-sm font-medium text-m3-primary">Data Threshold Alerts</h2>
+<div class="flex flex-col gap-3">
+<div class="p-4 rounded-xl bg-m3-surface-container-low">
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-m3-on-surface-variant">device_thermostat</span>
+<p class="flex-1 text-base leading-normal truncate">Temperature</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-[52px] cursor-pointer items-center rounded-full p-1 transition-colors duration-300 ease-in-out has-[:checked]:bg-m3-primary bg-m3-outline-variant">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="flex items-center justify-center text-transparent transition-colors duration-300 ease-in-out size-4 peer-checked:text-m3-primary-container">
+<span class="text-base leading-none material-symbols-outlined">done</span>
+</span>
+<span class="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-m3-on-surface-variant shadow-md transition-transform duration-300 ease-in-out peer-checked:translate-x-[-16px] peer-checked:bg-white">
+</span>
+</label>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-m3-outline-variant">
+<div class="flex flex-col gap-4">
+<div>
+<label class="block mb-2 text-sm font-medium text-m3-on-surface-variant" for="temp-above">Notify if above</label>
+<div class="relative">
+<input class="w-full pl-4 pr-12 py-2.5 bg-m3-surface border-transparent rounded-lg text-m3-on-surface focus:ring-m3-primary focus:border-m3-primary" id="temp-above" type="number" value="28"/>
+<span class="absolute inset-y-0 right-0 flex items-center pr-4 text-m3-on-surface-variant">°C</span>
+</div>
+</div>
+<div>
+<label class="block mb-2 text-sm font-medium text-m3-on-surface-variant" for="temp-below">Notify if below</label>
+<div class="relative">
+<input class="w-full pl-4 pr-12 py-2.5 bg-m3-surface border-transparent rounded-lg text-m3-on-surface focus:ring-m3-primary focus:border-m3-primary" id="temp-below" type="number" value="10"/>
+<span class="absolute inset-y-0 right-0 flex items-center pr-4 text-m3-on-surface-variant">°C</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-m3-surface-container-low">
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-m3-on-surface-variant">humidity_percentage</span>
+<p class="flex-1 text-base leading-normal truncate">Humidity</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-[52px] cursor-pointer items-center rounded-full p-1 transition-colors duration-300 ease-in-out has-[:checked]:bg-m3-primary bg-m3-outline-variant">
+<input class="peer sr-only" type="checkbox"/>
+<span class="flex items-center justify-center text-transparent transition-colors duration-300 ease-in-out size-4 peer-checked:text-m3-primary-container">
+<span class="text-base leading-none material-symbols-outlined">done</span>
+</span>
+<span class="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-m3-on-surface-variant shadow-md transition-transform duration-300 ease-in-out peer-checked:translate-x-[-16px] peer-checked:bg-white">
+</span>
+</label>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-m3-surface-container-low">
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-m3-on-surface-variant">eco</span>
+<p class="flex-1 text-base leading-normal truncate">Soil Nutrition</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-8 w-[52px] cursor-pointer items-center rounded-full p-1 transition-colors duration-300 ease-in-out has-[:checked]:bg-m3-primary bg-m3-outline-variant">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="flex items-center justify-center text-transparent transition-colors duration-300 ease-in-out size-4 peer-checked:text-m3-primary-container">
+<span class="text-base leading-none material-symbols-outlined">done</span>
+</span>
+<span class="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-m3-on-surface-variant shadow-md transition-transform duration-300 ease-in-out peer-checked:translate-x-[-16px] peer-checked:bg-white">
+</span>
+</label>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-m3-outline-variant">
+<div class="flex flex-col gap-4">
+<div>
+<label class="block mb-2 text-sm font-medium text-m3-on-surface-variant" for="nutrition-level">Notify if below level</label>
+<div class="relative">
+<input class="w-full pl-4 pr-12 py-2.5 bg-m3-surface border-transparent rounded-lg text-m3-on-surface focus:ring-m3-primary focus:border-m3-primary" id="nutrition-level" type="number" value="300"/>
+<span class="absolute inset-y-0 right-0 flex items-center pr-4 text-m3-on-surface-variant">PPM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-m3-surface via-m3-surface to-transparent">
+<button class="w-full h-10 px-6 font-medium tracking-wide text-center rounded-full bg-m3-primary text-m3-primary-container hover:bg-opacity-90">Save Changes</button>
+</div>
+</div>
+
+</body></html>

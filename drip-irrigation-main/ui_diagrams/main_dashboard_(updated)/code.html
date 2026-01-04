@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartDrip Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#82E0AA",
+                        "accent": "#7DC2FF",
+                        "background-dark": "#1A1C1E",
+                        "card-background": "#212529",
+                        "text-light": "#E0E3E7",
+                        "text-medium": "#B0B0B0",
+                        "switch-off": "#333333",
+                        "ripple-color": "rgba(125, 194, 255, 0.1)"
+                    },
+                    fontFamily: {
+                        "display": ["Roboto", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "md": "8px",
+                        "lg": "12px",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: var(--ripple-color, rgba(255, 255, 255, 0.3));
+            opacity: 0;
+            border-radius: 50%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        .ripple:focus:not(:active):after {
+            animation: ripple 1s ease-out;
+        }
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0) translate(-50%);
+                opacity: 1;
+            }
+            20% {
+                transform: scale(25, 25) translate(-50%);
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(40, 40) translate(-50%);
+            }
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-text-light">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="flex items-center p-4 sticky top-0 bg-background-dark/90 backdrop-blur-sm z-10">
+<button class="flex size-12 shrink-0 items-center justify-start ripple rounded-full" style="--ripple-color: var(--tw-colors-ripple-color)">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-medium flex-1 text-center">SmartDrip</h1>
+<button class="flex size-12 shrink-0 items-center justify-end ripple rounded-full" style="--ripple-color: var(--tw-colors-ripple-color)">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="flex-grow pb-24">
+<div class="flex flex-col gap-8 px-4 pt-4">
+<div class="flex flex-col gap-4">
+<h2 class="text-lg font-medium">Environmental Insights</h2>
+<div class="grid grid-cols-2 gap-4">
+<a class="flex flex-col gap-2 rounded-xl bg-card-background p-4 shadow-none transition-transform duration-300 ease-in-out active:scale-95" href="#">
+<p class="text-sm font-normal leading-normal flex items-center gap-1.5"><span class="material-symbols-outlined text-base">thermostat</span>Temperature</p>
+<p class="text-text-light tracking-tight text-3xl font-normal leading-tight truncate">24°C</p>
+<div class="h-16 -mx-4 -mb-4">
+<svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 160 64" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M-2 44.5C6.10526 44.5 6.10526 8.5 14.2105 8.5C22.3158 8.5 22.3158 16.5 30.4211 16.5C38.5263 16.5 38.5263 37.5 46.6316 37.5C54.7368 37.5 54.7368 13.5 62.8421 13.5C70.9474 13.5 70.9474 40.5 79.0526 40.5C87.1579 40.5 87.1579 24.5 95.2632 24.5C103.368 24.5 103.368 18 111.474 18C119.579 18 119.579 48.5 127.684 48.5C135.789 48.5 135.789 59.5 143.895 59.5C152 59.5 152 0.5 160.105 0.5" stroke="#7DC2FF" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</a>
+<a class="flex flex-col gap-2 rounded-xl bg-card-background p-4 shadow-none transition-transform duration-300 ease-in-out active:scale-95" href="#">
+<p class="text-sm font-normal leading-normal flex items-center gap-1.5"><span class="material-symbols-outlined text-base">water_drop</span>Humidity</p>
+<p class="text-text-light tracking-tight text-3xl font-normal leading-tight truncate">65%</p>
+<div class="h-16 -mx-4 -mb-4">
+<svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 160 64" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M-2 13.5C6.10526 13.5 6.10526 37.5 14.2105 37.5C22.3158 37.5 22.3158 24.5 30.4211 24.5C38.5263 24.5 38.5263 16.5 46.6316 16.5C54.7368 16.5 54.7368 40.5 62.8421 40.5C70.9474 40.5 70.9474 8.5 79.0526 8.5C87.1579 8.5 87.1579 44.5 95.2632 44.5C103.368 44.5 103.368 51.5 111.474 51.5C119.579 51.5 119.579 18 127.684 18C135.789 18 135.789 10 143.895 10C152 10 152 59.5 160.105 59.5" stroke="#7DC2FF" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="text-lg font-medium">Irrigation Zones</h2>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-4 rounded-xl bg-card-background p-4 shadow-none">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-light text-lg font-normal">Vegetable Patch</p>
+<p class="text-sm">Soil: 45%</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-sm">psychology</span>
+<p class="text-xs font-medium">Automated</p>
+</div>
+</div>
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-switch-off rounded-full transition-colors duration-300 ease-in-out peer-checked:bg-primary peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:duration-300 after:ease-in-out"></div>
+</label>
+</div>
+<div class="flex items-center gap-4 rounded-xl bg-card-background p-4 shadow-none">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-light text-lg font-normal">Front Lawn</p>
+<p class="text-sm">Status: Idle</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-sm">touch_app</span>
+<p class="text-xs font-medium">Manual</p>
+</div>
+</div>
+<label class="relative inline-flex cursor-pointer items-center">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-switch-off rounded-full transition-colors duration-300 ease-in-out peer-checked:bg-primary peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:duration-300 after:ease-in-out"></div>
+</label>
+</div>
+<div class="flex items-center gap-4 rounded-xl bg-card-background p-4 shadow-none">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-light text-lg font-normal">Flower Beds</p>
+<p class="text-primary text-sm font-medium">Status: Watering</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-sm">psychology</span>
+<p class="text-xs font-medium">Automated</p>
+</div>
+</div>
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-switch-off rounded-full transition-colors duration-300 ease-in-out peer-checked:bg-primary peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:duration-300 after:ease-in-out"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="text-lg font-medium">Quick Actions</h2>
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center justify-center aspect-square rounded-xl bg-card-background ripple" style="--ripple-color: var(--tw-colors-ripple-color)">
+<span class="material-symbols-outlined text-accent">water_drop</span>
+<span class="text-sm mt-1">Water All</span>
+</button>
+<button class="flex flex-col items-center justify-center aspect-square rounded-xl bg-card-background ripple" style="--ripple-color: var(--tw-colors-ripple-color)">
+<span class="material-symbols-outlined text-accent">pause</span>
+<span class="text-sm mt-1">Pause All</span>
+</button>
+<button class="flex flex-col items-center justify-center aspect-square rounded-xl bg-card-background ripple" style="--ripple-color: var(--tw-colors-ripple-color)">
+<span class="material-symbols-outlined text-accent">skip_next</span>
+<span class="text-sm mt-1">Skip Next</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-card-background/90 backdrop-blur-sm border-t border-white/10 z-10">
+<div class="flex justify-around h-20 items-center">
+<a class="flex flex-col items-center gap-1 text-accent" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-xs font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-medium" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-xs font-medium">Schedule</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-medium" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-xs font-medium">History</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-medium" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-xs font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

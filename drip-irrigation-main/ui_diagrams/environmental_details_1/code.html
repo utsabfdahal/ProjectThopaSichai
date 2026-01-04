@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartDrip - Soil Humidity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#82E0AA",
+            "accent": "#7DC2FF",
+            "background-dark": "#1A1C1E",
+            "surface-container-low": "#212529",
+            "text-light": "#E3E3E3",
+            "text-muted": "#8A8F93",
+            "grid-dark": "#444746"
+          },
+          fontFamily: {
+            "display": ["Roboto", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+          keyframes: {
+            draw: {
+                '0%': { strokeDashoffset: '472' },
+                '100%': { strokeDashoffset: '0' },
+            },
+            fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+            },
+            ripple: {
+              'to': {
+                transform: 'scale(4)',
+                opacity: '0'
+              }
+            }
+          },
+          animation: {
+            'draw': 'draw 1.5s ease-in-out forwards',
+            'fade-in': 'fadeIn 0.5s ease-in forwards',
+            'ripple': 'ripple 600ms linear'
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 600ms linear;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    .animate-graph path {
+        stroke-dasharray: 472;
+        stroke-dashoffset: 472;
+        animation: draw 1.5s ease-out forwards;
+        animation-delay: 0.2s;
+    }
+    .animate-graph {
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in forwards;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark group/design-root overflow-x-hidden">
+<header class="flex items-center bg-background-dark p-4 justify-between sticky top-0 z-10">
+<button class="text-text-light flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition-colors relative overflow-hidden">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-text-light text-lg font-medium tracking-wide flex-1 text-center">Soil Humidity</h1>
+<div class="size-10 shrink-0"></div>
+</header>
+<main class="flex flex-col flex-1 px-4 py-2">
+<div class="flex flex-col gap-2">
+<div class="flex flex-col gap-2 p-4">
+<p class="text-text-muted text-base font-normal leading-normal">Current Reading</p>
+<div class="flex items-baseline gap-2">
+<p class="text-text-light tracking-light text-4xl font-bold leading-tight truncate">65%</p>
+</div>
+</div>
+<div class="relative flex min-h-[180px] w-full flex-1 flex-col py-4">
+<div class="absolute inset-0 grid grid-rows-4">
+<div class="border-b border-grid-dark"></div>
+<div class="border-b border-grid-dark"></div>
+<div class="border-b border-grid-dark"></div>
+<div></div>
+</div>
+<svg class="relative animate-graph" fill="none" height="150" preserveAspectRatio="none" viewBox="0 0 472 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#7DC2FF" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+<div class="flex py-6">
+<div class="flex h-10 w-full items-center justify-center rounded-full bg-surface-container-low p-1">
+<label class="relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 text-sm font-medium leading-normal transition-colors text-text-light has-[:checked]:bg-primary has-[:checked]:text-black">
+<span class="truncate">24H</span>
+<input checked="" class="sr-only" name="time-range-selector" type="radio" value="24H"/>
+</label>
+<label class="relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 text-sm font-medium leading-normal transition-colors text-text-light has-[:checked]:bg-primary has-[:checked]:text-black">
+<span class="truncate">7D</span>
+<input class="sr-only" name="time-range-selector" type="radio" value="7D"/>
+</label>
+<label class="relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 text-sm font-medium leading-normal transition-colors text-text-light has-[:checked]:bg-primary has-[:checked]:text-black">
+<span class="truncate">30D</span>
+<input class="sr-only" name="time-range-selector" type="radio" value="30D"/>
+</label>
+<label class="relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 text-sm font-medium leading-normal transition-colors text-text-light has-[:checked]:bg-primary has-[:checked]:text-black">
+<span class="truncate">All Time</span>
+<input class="sr-only" name="time-range-selector" type="radio" value="All Time"/>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between rounded-lg bg-surface-container-low p-4">
+<p class="text-text-muted text-base font-normal">High</p>
+<p class="text-text-light text-lg font-medium">72%</p>
+</div>
+<div class="flex items-center justify-between rounded-lg bg-surface-container-low p-4">
+<p class="text-text-muted text-base font-normal">Low</p>
+<p class="text-text-light text-lg font-medium">58%</p>
+</div>
+</div>
+</main>
+</div>
+<script>
+    document.addEventListener("click", function(e) {
+      const button = e.target.closest('button, label');
+      if (!button) return;
+      const ripple = document.createElement("span");
+      button.appendChild(ripple);
+      const rect = button.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      ripple.style.width = ripple.style.height = `${size}px`;
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      ripple.classList.add("ripple");
+      ripple.addEventListener("animationend", () => {
+        ripple.remove();
+      });
+      // Graph "animation" trigger
+      if (button.hasAttribute('for') || (button.querySelector('input') && button.querySelector('input').name === 'time-range-selector')) {
+          const graph = document.querySelector('.animate-graph');
+          if (graph) {
+              graph.classList.remove('animate-graph');
+              // void graph.offsetWidth; // This is a trick to force reflow/repaint, which restarts the animation
+              setTimeout(() => {
+                 graph.classList.add('animate-graph');
+              }, 10);
+          }
+      }
+    });
+</script>
+</body></html>

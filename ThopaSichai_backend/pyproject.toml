@@ -1,0 +1,24 @@
+[project]
+name = "thopasichai-backend"
+version = "0.1.0"
+description = "Django backend with DRF, Channels, Daphne, and MQTT"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "django>=6.0",
+    "djangorestframework>=3.16.0",
+    "django-cors-headers>=4.9.0",
+    "python-decouple>=3.8",
+    "channels>=4.0.0",
+    "daphne>=4.0.0",
+    "paho-mqtt>=1.6.0",
+    "psycopg[binary]>=3.1.0",
+    "drf-spectacular>=0.29.0",
+]
+
+[dependency-groups]
+dev = ["ruff", "pytest", "pytest-django"]
+
+[tool.uv]
+package = false

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartDrip - Reset Password</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#82E0AA",
+              "background-light": "#F5F5F5",
+              "background-dark": "#1A1C1E",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#212529",
+              "on-surface-light": "#1C1B1F",
+              "on-surface-dark": "#E0E3E7",
+              "on-primary-light": "#FFFFFF",
+              "on-primary-dark": "#003913",
+            },
+            fontFamily: {
+              "display": ["Roboto", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            keyframes: {
+              slideIn: {
+                'from': { transform: 'translateY(100%)', opacity: '0' },
+                'to': { transform: 'translateY(0)', opacity: '1' },
+              },
+            },
+            animation: {
+              slideIn: 'slideIn 0.3s ease-out forwards',
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+<style>
+      body {
+        min-height: max(884px, 100dvh);
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .ripple-button {
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .ripple-button:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.2), 0 2px 6px 2px rgb(0 0 0 / 0.15);
+    }
+    .ripple-button .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(0);
+      animation: ripple-effect 0.6s linear;
+      pointer-events: none;
+    }
+    @keyframes ripple-effect {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-on-surface-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col font-display group/design-root overflow-x-hidden">
+<div class="flex items-center p-4 pb-2 justify-between bg-background-dark">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-lg font-medium leading-tight tracking-[-0.015em] flex-1 text-center -ml-12">Reset Password</h2>
+</div>
+<div class="flex-grow flex flex-col justify-between p-6">
+<div class="w-full">
+<h1 class="tracking-tight text-3xl font-normal leading-tight text-left pb-3 pt-6">Forgot Password?</h1>
+<p class="text-on-surface-dark/80 text-base font-normal leading-normal pb-8 pt-1">Enter your email and we'll send you a link to reset your password.</p>
+<div class="flex max-w-[480px] flex-col gap-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-sm font-medium leading-normal pb-1 px-1 text-on-surface-dark/80">Email Address</p>
+<div class="relative w-full">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-on-surface-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border-transparent bg-surface-dark h-14 placeholder:text-on-surface-dark/60 p-4 text-base font-normal leading-normal" placeholder="Enter your email" type="email" value=""/>
+</div>
+</label>
+</div>
+</div>
+<div class="w-full pb-4">
+<div class="bg-surface-dark text-on-surface-dark text-sm font-medium py-3 px-6 rounded-lg shadow-lg mb-6 mx-auto w-fit opacity-0 pointer-events-none" id="snackbar">
+                    Password reset link sent!
+                </div>
+<div class="flex">
+<button class="ripple-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 flex-1 bg-primary text-on-primary-dark text-base font-medium leading-normal tracking-[0.015em] shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-dark" id="send-btn">
+<span class="truncate">Send Reset Link</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+      const button = document.getElementById('send-btn');
+      const snackbar = document.getElementById('snackbar');
+      button.addEventListener('click', function(e) {
+        // Ripple effect
+        const rect = this.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        const diameter = Math.max(this.clientWidth, this.clientHeight);
+        const radius = diameter / 2;
+        ripple.style.width = ripple.style.height = `${diameter}px`;
+        ripple.style.left = `${e.clientX - rect.left - radius}px`;
+        ripple.style.top = `${e.clientY - rect.top - radius}px`;
+        ripple.classList.add('ripple');
+        const existingRipple = this.getElementsByClassName('ripple')[0];
+        if (existingRipple) {
+            existingRipple.remove();
+        }
+        this.appendChild(ripple);
+        // Snackbar animation
+        snackbar.classList.remove('animate-slideIn', 'opacity-0');
+        snackbar.classList.add('animate-slideIn');
+        snackbar.style.opacity = '1';
+        setTimeout(() => {
+          snackbar.style.opacity = '0';
+          snackbar.classList.remove('animate-slideIn');
+        }, 4000); // Hide after 4 seconds
+      });
+    </script>
+
+</body></html>

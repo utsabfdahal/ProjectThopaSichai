@@ -1,0 +1,28 @@
+[project]
+name = "micropy"
+version = "0.1.0"
+description = "MicroPython ESP32 Development Environment"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["esptool>=5.1.0", "mpremote>=1.24.0", "pyserial>=3.5"]
+
+[project.scripts]
+# Flash firmware to ESP32
+flash = "micropy.scripts:flash_firmware"
+# Upload code to ESP32
+upload = "micropy.scripts:upload_code"
+# Download code from ESP32
+download = "micropy.scripts:download_code"
+# Open REPL
+repl = "micropy.scripts:open_repl"
+# List files on ESP32
+ls = "micropy.scripts:list_files"
+# Reset ESP32
+reset = "micropy.scripts:reset_device"
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

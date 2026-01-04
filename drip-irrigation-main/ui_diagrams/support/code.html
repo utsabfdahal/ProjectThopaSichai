@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartDrip Help &amp; Support</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "m3-background": "#1A1C1E",
+            "m3-on-background": "#E2E2E6",
+            "m3-primary": "#82E0AA",
+            "m3-on-primary": "#003823",
+            "m3-surface-container-low": "#191C1D",
+            "m3-on-surface": "#C6C6CA",
+            "m3-on-surface-variant": "#C2C7C1",
+            "m3-outline": "#8C938E",
+            "m3-surface-container": "#1E2022",
+          },
+          fontFamily: {
+            "display": ["Roboto", "sans-serif"],
+            "body": ["Roboto", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .ripple {
+      position: relative;
+      overflow: hidden;
+      transform: translate3d(0, 0, 0);
+    }
+    .ripple:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transform: scale(10,10);
+      opacity: 0;
+      transition: transform .5s, opacity 1s;
+    }
+    .ripple:active:after {
+      transform: scale(0,0);
+      opacity: .2;
+      transition: 0s;
+    }
+    details[open] summary ~ * {
+        animation: sweep .5s ease-in-out;
+    }
+    @keyframes sweep {
+        0%    {opacity: 0; transform: translateY(-10px)}
+        100%  {opacity: 1; transform: translateY(0)}
+    }
+    .group:focus-within, .group:hover {
+        --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+    .group summary::-webkit-details-marker {
+        display: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-m3-background font-body">
+<div class="relative mx-auto flex h-auto min-h-dvh w-full max-w-md flex-col bg-m3-background overflow-x-hidden">
+<div class="sticky top-0 z-10 flex items-center bg-m3-background px-2 py-3">
+<button class="flex size-12 items-center justify-center text-m3-on-background">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center text-xl font-normal text-m3-on-background pr-12">Support</h1>
+</div>
+<main class="flex-grow px-4 pb-8">
+<h2 class="px-4 pb-3 pt-4 text-base font-medium text-m3-primary">Frequently Asked Questions</h2>
+<div class="flex flex-col gap-2">
+<details class="group rounded-2xl bg-m3-surface-container-low transition-all duration-300">
+<summary class="flex cursor-pointer list-none items-center justify-between p-4">
+<p class="text-base font-medium text-m3-on-surface">How do I set up a new automated schedule?</p>
+<div class="text-m3-on-surface-variant transition-transform duration-300 ease-out group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="px-4 pb-4 text-sm font-normal text-m3-on-surface-variant">
+            To set up a new automated schedule, navigate to the 'Schedules' tab, tap the '+' icon, and follow the on-screen prompts to define the dripping frequency, duration, and target moisture levels. Save the schedule to activate it.
+          </p>
+</details>
+<details class="group rounded-2xl bg-m3-surface-container-low transition-all duration-300">
+<summary class="flex cursor-pointer list-none items-center justify-between p-4">
+<p class="text-base font-medium text-m3-on-surface">What do the nutrition graph readings mean?</p>
+<div class="text-m3-on-surface-variant transition-transform duration-300 ease-out group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="px-4 pb-4 text-sm font-normal text-m3-on-surface-variant">
+            The nutrition graph displays key metrics like N-P-K levels over time. A rising line indicates nutrient absorption, while a flat or declining line might suggest a need for adjustment in your fertilizer solution.
+          </p>
+</details>
+<details class="group rounded-2xl bg-m3-surface-container-low transition-all duration-300">
+<summary class="flex cursor-pointer list-none items-center justify-between p-4">
+<p class="text-base font-medium text-m3-on-surface">My system isn't connecting to Wi-Fi. What should I do?</p>
+<div class="text-m3-on-surface-variant transition-transform duration-300 ease-out group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="px-4 pb-4 text-sm font-normal text-m3-on-surface-variant">
+            First, ensure your Wi-Fi router is on and you are within range. Try rebooting both your SmartDrip controller and your router. If the problem persists, go to 'Settings' &gt; 'Wi-Fi Setup' to re-enter your network credentials.
+          </p>
+</details>
+<details class="group rounded-2xl bg-m3-surface-container-low transition-all duration-300">
+<summary class="flex cursor-pointer list-none items-center justify-between p-4">
+<p class="text-base font-medium text-m3-on-surface">How do I switch between manual and automated modes?</p>
+<div class="text-m3-on-surface-variant transition-transform duration-300 ease-out group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="px-4 pb-4 text-sm font-normal text-m3-on-surface-variant">
+            On the main dashboard, you'll find a toggle switch labeled 'Mode'. Simply tap it to switch between 'Auto' for scheduled dripping and 'Manual' for on-demand control.
+          </p>
+</details>
+</div>
+<h2 class="px-4 pb-3 pt-10 text-base font-medium text-m3-primary">Contact Support</h2>
+<div class="flex flex-col gap-4 rounded-2xl bg-m3-surface-container-low p-4">
+<div>
+<label class="block text-sm font-medium text-m3-on-surface-variant mb-1" for="name">Name</label>
+<input class="w-full rounded-lg border-m3-outline bg-transparent px-3 py-2 text-m3-on-surface placeholder:text-m3-on-surface-variant focus:border-m3-primary focus:ring-m3-primary" id="name" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-m3-on-surface-variant mb-1" for="email">Email</label>
+<input class="w-full rounded-lg border-m3-outline bg-transparent px-3 py-2 text-m3-on-surface placeholder:text-m3-on-surface-variant focus:border-m3-primary focus:ring-m3-primary" id="email" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-m3-on-surface-variant mb-1" for="message">Message</label>
+<textarea class="w-full rounded-lg border-m3-outline bg-transparent px-3 py-2 text-m3-on-surface placeholder:text-m3-on-surface-variant focus:border-m3-primary focus:ring-m3-primary" id="message" rows="4"></textarea>
+</div>
+<button class="ripple flex h-10 items-center justify-center rounded-full bg-m3-primary text-sm font-medium text-m3-on-primary shadow-sm transition-all duration-200 ease-out hover:shadow-md active:translate-y-px active:shadow-sm">
+          Send Message
+        </button>
+</div>
+</main>
+</div>
+
+</body></html>
