@@ -316,4 +316,4 @@ screen /dev/ttyUSB0 115200
 
 ## License
 
-This project is developed for agricultural modernization in Nepal.
+This project is developed for agricultural modernization in Nepal. This project is in its very initial phase, and we're commited to keep everything open source including the future developed hardware, PCB layouts, codes and everything you can think of.
