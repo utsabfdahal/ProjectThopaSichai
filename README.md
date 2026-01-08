@@ -1,5 +1,6 @@
 # ThopaSichai - Smart Drip Irrigation System
 
+
 ThopaSichai (meaning "Drip Irrigation" in Nepali) is an autonomous, solar-powered IoT-based smart drip irrigation system designed for small-to-medium-hold farmers. The system uses real-time soil moisture sensors and automated motor control to optimize water usage and reduce manual labor in agricultural irrigation.
 
 ## Table of Contents
@@ -59,6 +60,11 @@ Sensor Nodes (ESP-NOW) --> Gateway (WiFi/HTTP) --> Django Backend --> Mobile App
                                                         v
 Actuator Node (WiFi/HTTP) <-- Motor Commands <-- Motor Logic
 ```
+## Dashboard View
+
+<img src="./Dashboard.png" width="600">
+
+
 
 ## Project Structure
 
